@@ -4,13 +4,7 @@ public class Palindrome {
             System.out.println("Please provide a number as a command line argument.");
             return;
         }
-        String input = args[0];
-        // Check if input is a valid integer (only digits, optional leading minus)
-        if (!input.matches("-?\\d+")) {
-            System.out.println("Invalid input. Please enter a valid integer.");
-            return;
-        }
-        int number = Integer.parseInt(input);
+        int number = Integer.parseInt(args[0]);
         int original = number;
         int reversed = 0;
         int temp = Math.abs(number);
