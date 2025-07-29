@@ -1,5 +1,5 @@
 // Book.java
-public class Book {
+class Book {
     private String name;
     private Author author;  // Association with Author class
     private double price;

@@ -1,5 +1,5 @@
 // Author.java
-public class Author {
+class Author {
     private String name;
     private String email;
     private char gender;
