@@ -1,4 +1,4 @@
- class Reverse {
+class Reverse {
     public static void main(String[] args) {
         int number = 12345; // You can change this number to test
         int reversed = 0;
