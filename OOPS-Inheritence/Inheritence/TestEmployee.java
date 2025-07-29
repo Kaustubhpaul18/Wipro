@@ -1,4 +1,3 @@
-// Person.java
 class Person {
     private String name;
 
@@ -17,13 +16,13 @@ class Person {
     }
 }
 
-// Employee.java
+
 class Employee extends Person {
     private double annualSalary;
     private int yearStarted;
     private String nationalInsuranceNumber;
 
-    // Constructor
+  
     public Employee(String name, double annualSalary, int yearStarted, String nationalInsuranceNumber) {
         super(name); // Call to Person constructor
         this.annualSalary = annualSalary;
@@ -57,13 +56,13 @@ class Employee extends Person {
     }
 }
 
-// TestEmployee.java
+
 public class TestEmployee {
     public static void main(String[] args) {
-        // Creating an Employee object
+        
         Employee emp = new Employee("Kaustubh Paul", 75000.0, 2025, "NI2546464B");
 
-        // Displaying the details
+        
         System.out.println("Employee Name: " + emp.getName());
         System.out.println("Annual Salary: " + emp.getAnnualSalary());
         System.out.println("Year Started: " + emp.getYearStarted());
