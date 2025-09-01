@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Sign Up</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="date-time" id="dateTime"></div>
+
+    <div class="form-container">
+        <h2>Registration Form</h2>
+        <form id="regForm" onsubmit="return validateForm()">
+            <label>First Name:</label>
+            <input type="text" id="fname" name="fname"><br><br>
+
+            <label>Last Name:</label>
+            <input type="text" id="lname" name="lname"><br><br>
+
+            <label>Password:</label>
+            <input type="password" id="password" name="password"><br><br>
+
+            <label>Confirm Password:</label>
+            <input type="password" id="cpassword" name="cpassword"><br><br>
+
+            <label>Gender:</label>
+            <input type="radio" name="gender" value="Male"> Male
+            <input type="radio" name="gender" value="Female"> Female <br><br>
+
+            <label>Mobile Number:</label>
+            <input type="text" id="mobile" name="mobile"><br><br>
+
+            <label>DOB:</label>
+            <input type="text" id="dob" name="dob" placeholder="DD-MM-YYYY"><br><br>
+
+            <label>Email:</label>
+            <input type="text" id="email" name="email"><br><br>
+
+            <input type="submit" value="Register" id="submitBtn">
+        </form>
+    </div>
+</body>
+</html>

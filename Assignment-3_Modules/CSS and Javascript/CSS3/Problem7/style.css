@@ -1,0 +1,8 @@
+.box-7 {
+    /* Assuming a starting size for the example */
+    width: 100px;
+    height: 100px;
+    
+    /* Scaling the element */
+    transform: scale(2, 3);
+}

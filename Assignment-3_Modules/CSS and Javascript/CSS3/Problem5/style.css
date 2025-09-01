@@ -1,0 +1,22 @@
+.background-box {
+    /* Set the dimensions of the div */
+    width: 350px;
+    height: 150px;
+
+    /* Set the background image and its properties */
+    background-image: url('imagename.gif');
+    
+    /* Using 'repeat-y' as specified in one of the lines */
+    background-repeat: repeat-y;
+    
+    /* The 'background-size: cover' property will make sure the image covers the entire area */
+    background-size: cover;
+    
+    /* Adding a border for better visualization */
+    border: 2px solid black;
+    
+    /* Centering the text inside for clarity */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

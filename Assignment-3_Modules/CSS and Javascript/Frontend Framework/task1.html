@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Responsive Image Change</title>
+  <style>
+    body { text-align: center; }
+    img { width: 80%; height: auto; border-radius: 10px; }
+  </style>
+</head>
+<body>
+  <h2>Resize the browser to see images change</h2>
+  <img id="responsiveImg" src="./images1.jpeg" alt="Image" onerror="this.onerror=null;this.src='https://via.placeholder.com/800x400?text=Image+Not+Found';">
+  <script>
+    const img = document.getElementById("responsiveImg");
+    const images = ["./images1.jpeg", "./images2.jpeg", "./images3.jpeg", "./images4.jpeg"];
+    function changeImage() {
+      let width = window.innerWidth;
+      if (width < 500) img.src = images[0];
+      else if (width < 800) img.src = images[1];
+      else if (width < 1100) img.src = images[2];
+      else img.src = images[3];
+    }
+    window.onresize = changeImage;
+    changeImage();
+  </script>
+</body>
+</html>

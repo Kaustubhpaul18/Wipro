@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 3</title>
+</head>
+<body>
+    <script>
+        function checkPalindrome(str) {
+            // Convert the string to lowercase and remove non-alphanumeric characters for a more robust check.
+            const cleanStr = str.toLowerCase().replace(/[^a-z0-9]/g, '');
+            
+            // Reverse the cleaned string.
+            const reversedStr = cleanStr.split('').reverse().join('');
+            
+            // Compare the cleaned string with its reversed version.
+            if (cleanStr === reversedStr) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        const string1 = "madam";
+        const string2 = "hello";
+
+        document.write('Is "' + string1 + '" a palindrome? ' + checkPalindrome(string1) + "<br>");
+        document.write('Is "' + string2 + '" a palindrome? ' + checkPalindrome(string2));
+    </script>
+</body>
+</html>

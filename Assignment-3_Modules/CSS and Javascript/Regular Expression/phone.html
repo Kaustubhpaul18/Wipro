@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Phone Number Validation</title>
+  <script type="text/javascript">
+    // Function to validate form
+    function validateForm() {
+      var phone = document.forms["myForm"]["phone"].value.trim();
+      var format = document.forms["myForm"]["format"].value;
+
+      // Regex for allowed formats
+      var phonePattern = /^\d{3}[-. ]\d{3}[-. ]\d{4}$/;
+
+      if (phone === "") {
+        alert("Phone number must be entered");
+        document.forms["myForm"]["phone"].focus();
+        return false;
+      }
+      if (!phonePattern.test(phone)) {
+        alert("Phone number must match the selected format (" + format + ")");
+        document.forms["myForm"]["phone"].focus();
+        return false;
+      }
+      return true; // Validation success
+    }
+
+    // Function to auto-format based on selected format
+    function formatPhone(input) {
+      var format = document.forms["myForm"]["format"].value;
+      var numbers = input.value.replace(/\D/g, ''); // remove non-digits
+
+      if (numbers.length > 10) {
+        numbers = numbers.substring(0, 10);
+      }
+
+      var formatted = numbers;
+      if (numbers.length > 6) {
+        formatted = numbers.substring(0, 3) + format + numbers.substring(3, 6) + format + numbers.substring(6);
+      } else if (numbers.length > 3) {
+        formatted = numbers.substring(0, 3) + format + numbers.substring(3);
+      }
+
+      input.value = formatted;
+    }
+  </script>
+</head>
+<body>
+  <h2>Phone Number Validation</h2>
+  <form name="myForm" onsubmit="return validateForm()">
+    <label for="phone">Phone Number:</label>
+    <input type="text" name="phone" onkeyup="formatPhone(this)" placeholder="Enter phone number"><br><br>
+
+    <label for="format">Choose Format:</label>
+    <select name="format" onchange="formatPhone(document.forms['myForm']['phone'])">
+      <option value="-">XXX-XXX-XXXX</option>
+      <option value=".">XXX.XXX.XXXX</option>
+      <option value=" ">XXX XXX XXXX</option>
+    </select><br><br>
+
+    <input type="submit" value="Submit">
+  </form>
+</body>
+</html>

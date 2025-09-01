@@ -1,0 +1,4 @@
+.box-2 {
+    float: left; /* Using a float property as requested */
+    text-shadow: 2px 2px 4px #000000;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 7</title>
+</head>
+<body>
+    <script>
+        // Alert today's date
+        const today = new Date();
+        alert("Today's date is: " + today.toLocaleDateString());
+
+        // Get and greet the user
+        const username = prompt("Please enter your username:");
+        if (username) {
+            alert("Hello " + username);
+        }
+
+        // Get two numbers and alert their sum
+        const num1 = parseFloat(prompt("Enter the first number:"));
+        const num2 = parseFloat(prompt("Enter the second number:"));
+        
+        if (!isNaN(num1) && !isNaN(num2)) {
+            const sum = num1 + num2;
+            alert("The sum of the numbers is: " + sum);
+        } else {
+            alert("Invalid input. Please enter valid numbers.");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 2</title>
+</head>
+<body>
+    <script>
+        function reverseNumber(num) {
+            // Convert the number to a string, split it into an array of characters,
+            // reverse the array, and then join it back into a string.
+            const reversedStr = String(num).split('').reverse().join('');
+            
+            // Convert the reversed string back to a number and return it.
+            return Number(reversedStr);
+        }
+
+        const x = 32243;
+        const result = reverseNumber(x);
+
+        document.write("Original Number: " + x + "<br>");
+        document.write("Reversed Number: " + result);
+    </script>
+</body>
+</html>

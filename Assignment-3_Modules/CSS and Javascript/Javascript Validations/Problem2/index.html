@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Number Validation</title>
+</head>
+<body>
+    <h2>Phone Number</h2>
+    <form name="phoneForm" onsubmit="return validatePhoneNumber()">
+        <label for="phone">Phone Number:</label><br>
+        <input type="text" id="phone" name="phone"><br><br>
+        
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        function validatePhoneNumber() {
+            const phone = document.getElementById("phone");
+
+            if (phone.value.trim() === "") {
+                alert("Phone number must be entered.");
+                phone.focus();
+                return false;
+            }
+
+            // Regular expression for the format XXX XXX XXXX
+            const phoneRegex = /^\d{3}\s\d{3}\s\d{4}$/;
+            
+            if (!phoneRegex.test(phone.value.trim())) {
+                alert("Please enter the phone number in the format 'XXX XXX XXXX'.");
+                phone.focus();
+                return false;
+            }
+
+            alert("Phone number is valid!");
+            return true;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+/* Bootstrap Placeholder File */
+/* In real project, replace this with official bootstrap.min.css */ 
+body { font-family: Arial, sans-serif; }
+.table { border-collapse: collapse; width: 50%; }
+.table th, .table td { border: 1px solid black; padding: 8px; }
+.table-striped tr:nth-child(even) { background-color: #f2f2f2; }
+.table-bordered { border: 2px solid black; }
+.text-primary { color: blue; }
+.text-success { color: green; }
+.btn { padding: 6px 12px; border: 1px solid gray; border-radius: 4px; }
+.btn-primary { background-color: blue; color: white; }
+.alert { padding: 10px; margin: 5px 0; }
+.alert-warning { background-color: yellow; }

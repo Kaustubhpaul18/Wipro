@@ -1,0 +1,5 @@
+.box-4 {
+    border: 15px solid transparent;
+    padding: 20px;
+    border-image: url('imagename.png') 30 30 stretch;
+}

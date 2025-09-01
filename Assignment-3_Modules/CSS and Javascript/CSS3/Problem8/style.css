@@ -1,0 +1,10 @@
+.box-8 {
+    transform: skew(20deg, 10deg);
+    background-image: url('imagename.gif');
+    background-repeat: repeat-x;
+    background-size: cover;
+    
+    /* Adding some base dimensions for the div to be visible */
+    width: 300px;
+    height: 200px;
+}
