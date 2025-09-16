@@ -1,0 +1,10 @@
+<hibernate-mapping>
+  <class name="com.example.Employee" table="EMPLOYEE">
+    <id name="id" column="ID">
+      <generator class="increment"/>
+    </id>
+    <property name="name" column="NAME"/>
+    <property name="designation" column="DESIGNATION"/>
+    <property name="salary" column="SALARY"/>
+  </class>
+</hibernate-mapping>

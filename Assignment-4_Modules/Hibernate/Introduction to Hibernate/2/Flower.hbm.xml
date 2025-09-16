@@ -1,0 +1,8 @@
+<hibernate-mapping>
+  <class name="com.example.Flower" table="FLOWER">
+    <id name="flowerId" column="FLOWERID"/>
+    <property name="flowerName" column="FLOWERNAME"/>
+    <property name="color" column="COLOR"/>
+    <property name="price" column="PRICE"/>
+  </class>
+</hibernate-mapping>

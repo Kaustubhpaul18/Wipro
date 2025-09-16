@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="com.example.Emp" table="EMP">
+    <id name="empno" column="EMPNO"/>
+    <property name="ename" column="ENAME"/>
+    <property name="job" column="JOB"/>
+    <property name="mgr" column="MGR"/>
+    <property name="hiredate" column="HIREDATE"/>
+    <property name="sal" column="SAL"/>
+    <property name="comm" column="COMM"/>
+    <property name="deptno" column="DEPTNO"/>
+  </class>
+</hibernate-mapping>

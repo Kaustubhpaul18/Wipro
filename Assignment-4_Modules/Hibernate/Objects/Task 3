@@ -1,0 +1,36 @@
+import java.util.Scanner;
+import org.hibernate.*;
+import org.hibernate.cfg.Configuration;
+
+public class UpdateFlowerPrice {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter Flower ID: ");
+        String id = sc.nextLine();
+
+        System.out.print("Enter new Price: ");
+        double newPrice = sc.nextDouble();
+
+        SessionFactory factory = new Configuration().configure("hibernate.cfg.xml")
+                                .addResource("Flower.hbm.xml")
+                                .buildSessionFactory();
+        Session session = factory.openSession();
+        Transaction tx = session.beginTransaction();
+
+        Flower flower = session.get(Flower.class, id);
+
+        if (flower != null) {
+            flower.setPrice(newPrice);
+            session.update(flower);
+            tx.commit();
+            System.out.println("Updated Flower: " + flower);
+        } else {
+            System.out.println("Flower with id " + id + " not found!");
+        }
+
+        session.close();
+        factory.close();
+        sc.close();
+    }
+}

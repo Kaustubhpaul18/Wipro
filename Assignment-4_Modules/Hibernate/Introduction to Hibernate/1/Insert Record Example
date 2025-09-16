@@ -1,0 +1,13 @@
+Session session = HibernateUtil.getSessionFactory().openSession();
+Transaction tx = session.beginTransaction();
+
+Emp e = new Emp();
+e.setEmpno(101);
+e.setEname("John");
+e.setJob("Manager");
+e.setDeptno(10);
+e.setSal(5000);
+
+session.save(e);
+tx.commit();
+session.close();

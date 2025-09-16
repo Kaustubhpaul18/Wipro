@@ -1,0 +1,11 @@
+<hibernate-mapping>
+  <class name="com.example.Product" table="PRODUCT">
+    <id name="productId" column="PRODUCTID">
+      <generator class="sequence">
+        <param name="sequence">PRODUCT_SEQ</param>
+      </generator>
+    </id>
+    <property name="productName" column="PRODUCTNAME"/>
+    <property name="price" column="PRICE"/>
+  </class>
+</hibernate-mapping>

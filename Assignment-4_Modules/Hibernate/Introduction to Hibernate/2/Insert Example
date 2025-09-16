@@ -1,0 +1,7 @@
+Flower f = new Flower();
+f.setFlowerId("F101");
+f.setFlowerName("Rose");
+f.setColor("Red");
+f.setPrice(50.0);
+
+session.save(f);

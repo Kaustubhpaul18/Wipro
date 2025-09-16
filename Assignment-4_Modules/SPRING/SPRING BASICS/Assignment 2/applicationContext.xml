@@ -1,0 +1,2 @@
+    <!-- Bean Definition for DefaultMessage -->
+    <bean id="defaultMessageBean" class="com.example.model.DefaultMessage"/>

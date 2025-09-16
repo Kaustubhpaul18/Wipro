@@ -1,0 +1,21 @@
+import org.hibernate.*;
+import org.hibernate.cfg.Configuration;
+
+public class GetFlower {
+    public static void main(String[] args) {
+        SessionFactory factory = new Configuration().configure("hibernate.cfg.xml")
+                                .addResource("Flower.hbm.xml")
+                                .buildSessionFactory();
+
+        Session session = factory.openSession();
+        Flower flower = session.get(Flower.class, "2");  // using get()
+
+        if (flower != null) {
+            System.out.println("Flower details: " + flower);
+        } else {
+            System.out.println("Flower with id 2 not found!");
+        }
+        session.close();
+        factory.close();
+    }
+}

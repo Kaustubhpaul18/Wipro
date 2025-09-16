@@ -1,0 +1,26 @@
+import org.hibernate.*;
+import org.hibernate.cfg.Configuration;
+
+public class DeleteFlower {
+    public static void main(String[] args) {
+        SessionFactory factory = new Configuration().configure("hibernate.cfg.xml")
+                                .addResource("Flower.hbm.xml")
+                                .buildSessionFactory();
+        Session session = factory.openSession();
+        Transaction tx = session.beginTransaction();
+
+        String id = "2";  // flower id to delete
+        Flower flower = session.get(Flower.class, id);
+
+        if (flower != null) {
+            session.delete(flower);
+            tx.commit();
+            System.out.println("Flower with id " + id + " deleted successfully.");
+        } else {
+            System.out.println("Error: Flower with id " + id + " does not exist.");
+        }
+
+        session.close();
+        factory.close();
+    }
+}

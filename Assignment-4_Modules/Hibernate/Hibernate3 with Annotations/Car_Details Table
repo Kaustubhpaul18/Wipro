@@ -1,0 +1,40 @@
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class InsertCars {
+    public static void main(String[] args) {
+        SessionFactory factory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
+        Session session = factory.openSession();
+        Transaction tx = session.beginTransaction();
+
+        CarDetails car1 = new CarDetails();
+        car1.setRegNo("KL-07");
+        car1.setModel("AB 123 Polo");
+        car1.setColor("White");
+        car1.setManufacturer("Volkswagen");
+
+        CarDetails car2 = new CarDetails();
+        car2.setRegNo("KL-07");
+        car2.setModel("AB 234 Vento");
+        car2.setColor("Black");
+        car2.setManufacturer("Volkswagen");
+
+        CarDetails car3 = new CarDetails();
+        car3.setRegNo("KL-07");
+        car3.setModel("AC 345 Corolla");
+        car3.setColor("Silver");
+        car3.setManufacturer("Toyota");
+
+        session.save(car1);
+        session.save(car2);
+        session.save(car3);
+
+        tx.commit();
+        session.close();
+        factory.close();
+
+        System.out.println("Cars inserted successfully!");
+    }
+}

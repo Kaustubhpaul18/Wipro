@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Test Objects -->
+    <bean id="coreJavaTest" class="com.example.model.Test">
+        <constructor-arg value="T001"/>
+        <constructor-arg value="Core Java Test"/>
+        <constructor-arg value="80"/>
+    </bean>
+
+    <bean id="oracleTest" class="com.example.model.Test">
+        <constructor-arg value="T002"/>
+        <constructor-arg value="Oracle Test"/>
+        <constructor-arg value="83"/>
+    </bean>
+
+    <!-- Student Objects -->
+    <bean id="student1" class="com.example.model.Student">
+        <constructor-arg value="S001"/>
+        <constructor-arg value="Steve"/>
+        <constructor-arg ref="coreJavaTest"/>
+    </bean>
+
+    <bean id="student2" class="com.example.model.Student">
+        <constructor-arg value="S002"/>
+        <constructor-arg value="Mark"/>
+        <constructor-arg ref="oracleTest"/>
+    </bean>
+
+</beans>

@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Balance</title></head>
+<body>
+<h2>Your Current Balance is: <span th:text="${customer.balance}"></span></h2>
+<form action="/claim" method="post">
+    <input type="hidden" name="customerId" th:value="${customer.customerId}">
+    Enter Coupon Code: <input type="text" name="couponCode" required>
+    <button type="submit">CLAIM</button>
+</form>
+</body>
+</html>
